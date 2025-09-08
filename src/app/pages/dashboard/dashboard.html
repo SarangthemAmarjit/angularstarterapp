@@ -1,27 +1,33 @@
 <div class="container mb-xl-2"></div>
 
 <div class="container1">
+  <div class="innercontainer">
+    <label>EXPENSE TRACKER</label>
 
-
-    <div class="innercontainer">
-        <label>EXPENSE TRACKER</label>
-
-        <div class="menulist">
-
-            <div class="menu-item"><fa-icon  icon="tachometer-alt"></fa-icon> <span>Dashboard</span></div>
-            <div class="menu-item"><fa-icon icon="wallet"></fa-icon> <span>Transactions</span></div>
-            <div class="menu-item"><fa-icon icon="th-large"></fa-icon> <span>Categories</span></div>
-            <div class="menu-item"><fa-icon icon="chart-bar"></fa-icon> <span>Reports</span></div>
-            <div class="menu-item"><fa-icon icon="money-check-alt"></fa-icon> <span>Budget Planner</span></div>
-            <div class="menu-item"><fa-icon icon="cog"></fa-icon> <span>Settings</span></div>
-            <div class="menu-item"><fa-icon icon="sign-out-alt"></fa-icon> <span>Logout</span></div>
-
-        </div>
-
-
+    <div class="menulist">
+      <div
+        class="menu-item"
+        *ngFor="let item of menuItems; let i = index"
+        (click)="updatepageind(i)"
+        [class.active]="pageindex() === i"
+      >
+        <fa-icon icon="{{ item.icon }}"></fa-icon>
+        <span>{{ item.label }}</span>
+      </div>
     </div>
+  </div>
 
-
-
-
+  @if(pageindex()==0) {
+  <app-dashboardsection />
+  }@else if (pageindex()==1) {
+  <app-transactionsection />
+  }@else if (pageindex()==2) {
+  <app-categorysection />
+  }@else if (pageindex()==3) {
+  <app-reportsection />
+  }@else if (pageindex()==4) {
+  <app-budgetsection />
+  }@else if (pageindex()==5) {
+  <app-settingsection />
+  }
 </div>

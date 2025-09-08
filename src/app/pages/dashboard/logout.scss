@@ -1,0 +1,14 @@
+.dialog {
+  padding: 10px;                /* space on all sides */
+  border-radius: 10px;          /* round corners */
+  background-color: #d2eca2;       /* white background */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* subtle shadow */
+}
+
+
+
+
+
+.dialog mat-dialog-actions {
+  gap: 10px;                    /* spacing between buttons */
+}
