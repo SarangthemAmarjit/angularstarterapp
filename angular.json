@@ -27,8 +27,10 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
+       
             "server": "src/main.server.ts",
             "outputMode": "server",
             "ssr": {
@@ -92,5 +94,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "9895fa23-a1eb-49e6-a871-db07d2513f6e"
   }
 }
