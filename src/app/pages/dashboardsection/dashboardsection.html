@@ -1,1 +1,17 @@
-<p>dashboardsection works!</p>
+<div class="container1">
+    <h4>Dashboard</h4>
+    <fa-icon class="big-icon" icon="circle-user"></fa-icon>
+
+
+</div>
+
+<div style="margin-top: 15px;" class="container">
+    <div class="row">
+        <div class="col-6 col-md-4 col-lg-3" *ngFor="let item of dashboarditems">
+            <div class="card text-start p-3">
+                <span>{{ item.label }}</span>
+                <h4 style="margin-top: 8px;">{{"$"+ item.value }}</h4>
+            </div>
+        </div>
+    </div>
+</div>

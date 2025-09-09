@@ -32,6 +32,11 @@
   padding: 10px;
 }
 
+.mainpage {
+  margin: 20px;
+  width: 100%;
+}
+
 .menu-item {
   color: #000839;
   display: flex;
@@ -44,13 +49,21 @@
 }
 
 .menu-item:hover {
- border-color: aqua;
- border: 1px solid #f5f2f2;
+
+  border: 1px solid #f5f2f2;
 }
 
-.menu-item.active{
-   background-color: rgb(227, 250, 207);
+
+
+.menu-item.active {
+
+  background-color: rgb(227, 250, 207);
 }
+
+.iconclass.active {
+  color: rgb(7, 117, 32);
+}
+
 
 
 .innercontainer label {

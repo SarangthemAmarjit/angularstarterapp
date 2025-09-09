@@ -5,29 +5,26 @@
     <label>EXPENSE TRACKER</label>
 
     <div class="menulist">
-      <div
-        class="menu-item"
-        *ngFor="let item of menuItems; let i = index"
-        (click)="updatepageind(i)"
-        [class.active]="pageindex() === i"
-      >
-        <fa-icon icon="{{ item.icon }}"></fa-icon>
+      <div class="menu-item" *ngFor="let item of menuItems; let i = index" (click)="updatepageind(i)"
+        [class.active]="pageindex() === i">
+        <fa-icon class="iconclass" [class.active]="pageindex() === i" icon="{{ item.icon }}"></fa-icon>
         <span>{{ item.label }}</span>
       </div>
     </div>
   </div>
-
-  @if(pageindex()==0) {
-  <app-dashboardsection />
-  }@else if (pageindex()==1) {
-  <app-transactionsection />
-  }@else if (pageindex()==2) {
-  <app-categorysection />
-  }@else if (pageindex()==3) {
-  <app-reportsection />
-  }@else if (pageindex()==4) {
-  <app-budgetsection />
-  }@else if (pageindex()==5) {
-  <app-settingsection />
-  }
+  <div class="mainpage">
+    @if(pageindex()==0) {
+    <app-dashboardsection />
+    }@else if (pageindex()==1) {
+    <app-transactionsection />
+    }@else if (pageindex()==2) {
+    <app-categorysection />
+    }@else if (pageindex()==3) {
+    <app-reportsection />
+    }@else if (pageindex()==4) {
+    <app-budgetsection />
+    }@else if (pageindex()==5) {
+    <app-settingsection />
+    }
+  </div>
 </div>

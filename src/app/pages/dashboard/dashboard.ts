@@ -42,6 +42,7 @@ if (ind === 6) {
     const dialogRef = this.dialog.open(LogoutDialogComponent, {
       width: '350px',
       
+      
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -58,7 +59,7 @@ if (ind === 6) {
 
 
 menuItems = [
-  { icon: 'tachometer-alt', label: 'Dashboard' },
+  { icon: 'house', label: 'Dashboard' },
   { icon: 'wallet', label: 'Transactions' },
   { icon: 'th-large', label: 'Categories' },
   { icon: 'chart-bar', label: 'Reports' },
