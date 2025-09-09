@@ -72,6 +72,8 @@ body {
 /* You can add global styles to this file, and also import other style files */
 $bgcolor :      rgba(2, 6, 126, 0.6);
 html body {
+ background: linear-gradient(to right, rgb(247, 229, 229), rgb(233, 252, 233));
+
     background-color:$bgcolor;
     display: flex;
     justify-content: center;

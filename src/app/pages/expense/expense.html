@@ -1,0 +1,30 @@
+<div class="container1 d-flex">
+  <h4>Expenses</h4>
+  <button class="btn btn-outline-primary" (click)="this.showaddexpensedialog()">
+    <fa-icon icon="add"></fa-icon>
+    Add Expense
+  </button>
+</div>
+
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Details</th>
+        <th>Amount</th>
+        <th>Category</th>
+        <th>Expense Date</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of expenses; let i = index">
+      <tr>
+        <td>{{ i + 1 }}</td>
+        <td>{{ item.details }}</td>
+        <td>{{ item.amount }}</td>
+        <td>{{ item.category }}</td>
+        <td>{{ item.expenseDate }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

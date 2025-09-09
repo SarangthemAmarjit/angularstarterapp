@@ -7,6 +7,7 @@ import { FaIconComponent } from "@fortawesome/angular-fontawesome";
 import { Budgetsection } from "../budgetsection/budgetsection";
 import { Categorysection } from "../categorysection/categorysection";
 import { Dashboardsection } from "../dashboardsection/dashboardsection";
+import { Expense } from "../expense/expense";
 import { Reportsection } from "../reportsection/reportsection";
 import { Settingsection } from "../settingsection/settingsection";
 import { Transactionsection } from "../transactionsection/transactionsection";
@@ -17,7 +18,7 @@ import { LogoutDialogComponent } from './logout-dilog-component';
 @Component({
   standalone: true,
   selector: 'app-dashboard',
-  imports: [MatDialogModule, MatIconModule, FaIconComponent, NgFor, CommonModule, Dashboardsection, Transactionsection, Categorysection, Reportsection, Budgetsection, Settingsection],
+  imports: [MatDialogModule, MatIconModule, FaIconComponent, NgFor, CommonModule, Dashboardsection, Transactionsection, Categorysection, Reportsection, Budgetsection, Settingsection, Expense],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss'
   
@@ -29,7 +30,7 @@ export class Dashboard {
 
 updatepageind(ind: number) {
 
-if (ind === 6) {
+if (ind === 7) {
       this.openLogoutDialog();
     }else{
       this.pageindex.set(ind);   // directly set the value
@@ -60,6 +61,7 @@ if (ind === 6) {
 
 menuItems = [
   { icon: 'house', label: 'Dashboard' },
+    { icon: 'money-check-dollar', label: 'Expenses' },
   { icon: 'wallet', label: 'Transactions' },
   { icon: 'th-large', label: 'Categories' },
   { icon: 'chart-bar', label: 'Reports' },
