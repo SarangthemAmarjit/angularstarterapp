@@ -1,0 +1,25 @@
+<h1 matDialogTitle>Add New Expense</h1>
+
+
+<form class="form">
+    <!-- Expense details -->
+    <input class="form-control" placeholder="Enter Expense Details" type="text" />
+
+    <!-- Expense amount -->
+    <input class="form-control" placeholder="Enter Expense Amount" type="number" />
+
+    <!-- Category dropdown -->
+    <select class="form-select">
+        <option value="">Select Category</option>
+        <option value="Shopping">Shopping</option>
+        <option value="Watching Movie">Watching Movie</option>
+        <option value="Gas Fee">Gas Fee</option>
+    </select>
+</form>
+
+
+<mat-dialog-actions>
+    <button (click)="onCancel()" style="margin-right: 10px;" class="btn btn-danger">Cancel</button>
+    <button (click)="onConfirm()" class="btn btn-outline-primary">Submit</button>
+
+</mat-dialog-actions>

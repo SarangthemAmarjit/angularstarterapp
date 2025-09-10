@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 
 
 
@@ -7,13 +7,14 @@ import { MatDialogRef } from '@angular/material/dialog';
 @Component({
   selector: 'app-logout-dialog',
   templateUrl: "./expensedialog.html",
-  styleUrl:"./expensedialog.scss",
- 
-  
+  styleUrl: "./expensedialog.scss",
+  imports: [MatDialogModule],
+
+
 
 })
 export class AddExpenseDialog {
-  constructor(private dialogRef: MatDialogRef<AddExpenseDialog>) {}
+  constructor(private dialogRef: MatDialogRef<AddExpenseDialog>) { }
 
   onCancel(): void {
     this.dialogRef.close(false);
