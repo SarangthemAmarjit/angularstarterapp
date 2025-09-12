@@ -54,11 +54,11 @@
   border: 1px solid #f5f2f2;
 }
 
-p-confirm-dialog {
-  margin: 30px;
-  background-color: aquamarine;
-
+.custom-confirm-dialog .p-dialog-content {
+  padding: 20px;
+  font-size: 1rem;
 }
+
 
 .menu-item.active {
 

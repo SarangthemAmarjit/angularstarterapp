@@ -45,9 +45,12 @@ export class Dashboard {
     this.confirmationService.confirm({
       target: event.target as EventTarget,
       message: 'Do you want to Logout?',
-      header: 'Confirm LogOut',
+      header: ' Confirm LogOut ',
       icon: 'pi pi-info-circle',
       rejectLabel: 'Cancel',
+
+           // custom class for dialog
+     // custom class for content
       rejectButtonProps: {
         label: 'Cancel',
         severity: 'secondary',
