@@ -5,10 +5,11 @@
     <label>EXPENSE TRACKER</label>
 
     <div class="menulist">
+      <p-confirm-dialog/>
       <div
         class="menu-item"
         *ngFor="let item of menuItems; let i = index"
-        (click)="updatepageind(i)"
+        (click)="i === 7 ? confirm2($event) : updatepageind(i)"
         [class.active]="pageindex() === i"
       >
         <fa-icon
@@ -36,5 +37,6 @@
     }@else if (pageindex()==6) {
     <app-settingsection />
     }
+    
   </div>
 </div>
