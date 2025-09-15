@@ -17,10 +17,10 @@
         <th>Expense Date</th>
       </tr>
     </thead>
-    <tbody *ngFor="let item of expenses; let i = index">
+    <tbody *ngFor="let item of expenses(); let i = index">
       <tr>
         <td>{{ i + 1 }}</td>
-        <td>{{ item.details }}</td>
+        <td>{{ item.expenseDetails }}</td>
         <td>{{ item.amount }}</td>
         <td>{{ item.category }}</td>
         <td>{{ item.expenseDate }}</td>
