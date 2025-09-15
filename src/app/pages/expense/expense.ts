@@ -1,8 +1,11 @@
 import { NgFor } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { FaIconComponent } from "@fortawesome/angular-fontawesome";
+import { ExpenseService } from '../../services/expense';
 import { AddExpenseDialog } from './components/expensedialog';
+import { ExpenseModel } from '../../model/expensemodel';
+import { catchError } from 'rxjs';
 
 
 export interface Expensedata {
@@ -19,33 +22,22 @@ export interface Expensedata {
   templateUrl: './expense.html',
   styleUrl: './expense.scss'
 })
-export class Expense {
-  constructor(private dialog: MatDialog) { }
+export class Expense implements OnInit{
+  constructor(private dialog: MatDialog,) { }
+
+  expenseService = inject(ExpenseService);
+  expenses = signal(<Array<ExpenseModel>>([]));
+
+
 
   categorynames = ['details', 'amount', 'category', 'expenseDate', 'actions'];
 
-  expenses: Expensedata[] = [
-    {
-      details: 'Lunch at Café', amount: 250, category: 'Food & Dining', expenseDate: '2025-09-05',
-
-    },
-    {
-      details: 'Bus Ticket', amount: 50, category: 'Travel', expenseDate: '2025-09-04',
-
-    },
-    {
-      details: 'Electricity Bill', amount: 1200, category: 'Utilities', expenseDate: '2025-09-01',
-
-    },
-    {
-      details: 'Netflix Subscription', amount: 499, category: 'Entertainment', expenseDate: '2025-08-28',
-
-    },
-    {
-      details: 'Grocery Shopping', amount: 2000, category: 'Groceries', expenseDate: '2025-08-27',
-
-    },
-  ];
+  ngOnInit(): void {
+ this.expenseService.getExpenses().pipe(catchError((err) => {
+      console.log(err)
+      throw err;
+    })).subscribe((data) => { this.expenses.set(data); })
+  }
 
   showaddexpensedialog() {
     const dialogRef = this.dialog.open(AddExpenseDialog, {
