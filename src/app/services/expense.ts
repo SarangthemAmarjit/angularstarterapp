@@ -4,13 +4,15 @@ import { Observable } from 'rxjs';
 import { ExpenseModel } from '../model/expensemodel';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ExpenseService {
   // Replace with your API endpoint
 
   http = inject(HttpClient);
-  apiUrl = 'http://192.168.137.1:8080/api/Expenses';
+  // apiUrl = 'http://192.168.137.1:8080/api/Expenses';
+  apiUrl = 'http://10.10.1.214:8081/api/Expenses';
+
   // GET all expenses
   getExpenses(): Observable<ExpenseModel[]> {
     return this.http.get<ExpenseModel[]>(this.apiUrl);

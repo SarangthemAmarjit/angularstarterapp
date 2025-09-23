@@ -1,30 +1,35 @@
 <h1 matDialogTitle>Add New Expense</h1>
 
+<form [formGroup]="expenseForm" class="form">
+  <!-- Expense details -->
+  <input
+    class="form-control"
+    placeholder="Enter Expense Details"
+    type="text"
+    formControlName="expenseDetails"
+  />
 
-<form class="form">
-    <!-- Expense details -->
-    <input class="form-control" placeholder="Enter Expense Details" type="text" />
+  <!-- Expense amount -->
+  <input
+    class="form-control"
+    placeholder="Enter Expense Amount"
+    type="number"
+    formControlName="amount"
+  />
 
-    <!-- Expense amount -->
-    <input class="form-control" placeholder="Enter Expense Amount" type="number" />
-
-    <!-- Category dropdown -->
-    <!-- <select class="form-select">
-        <option value="">Select Category</option>
-        <option value="Shopping">Shopping</option>
-        <option value="Watching Movie">Watching Movie</option>
-        <option value="Gas Fee">Gas Fee</option>
-    </select> -->
-
-
-    <p-select [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" appendTo="body" placeholder="Select a City" class="w-full md:w-56" />
+  <!-- Category dropdown -->
+  <p-select
+    [options]="expensecategory"
+    formControlName="category"
+    optionLabel="name"
+    optionValue="name"
+    appendTo="body"
+    placeholder="Select Category"
+    class="w-full md:w-56"
+  ></p-select>
 </form>
 
-  
-
-
 <mat-dialog-actions>
-    <button (click)="onCancel()" style="margin-right: 10px;" class="btn btn-danger">Cancel</button>
-    <button (click)="onConfirm()" class="btn btn-outline-primary">Submit</button>
-
+  <button (click)="onCancel()" style="margin-right: 10px" class="btn btn-danger">Cancel</button>
+  <button (click)="onConfirm()" class="btn btn-outline-primary">Submit</button>
 </mat-dialog-actions>
